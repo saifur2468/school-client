@@ -53,9 +53,9 @@ const Dashboard = () => {
 
   const adminMenuItems = [
     { name: 'Home Page', icon: <FaHome />, path: '/' },
-    { name: 'Admission Manage', icon: <FaPersonRifle />, path: 'Admission Manage' },
+    { name: 'Admission Manage', icon: <FaPersonRifle />, path: 'AdminAdmissions' },
     { name: 'Post Notice', icon: <FaBullhorn />, path: 'Notice' },
-    { name: 'Make Routine', icon: <FaCalendarAlt />, path: 'Make Routine' },
+    { name: 'Make Routine', icon: <FaCalendarAlt />, path: 'MakeRouting' },
     { name: 'Due Payments', icon: <FaHandshake />, path: 'Due Payments' },
     { name: 'Add Teacher', icon: <FaChalkboardUser />, path: 'Add Teacher'},
     { name: 'All Students', icon: <FaGraduationCap />, path: 'allstudent'},
@@ -64,13 +64,13 @@ const Dashboard = () => {
 
   const userMenuItems = [
     { name: 'Home Page', icon: <FaHome />, path: '/' },
-    { name: 'My Profile', icon: <FaUserCircle />, path: 'userProfile' },
+    { name: 'My Profile', icon: <FaUserCircle />, path: 'StudentProfile' },
     { name: 'Make Payment', icon: <FaCreditCard />, path: 'MakePayment' },
     { name: 'Payment History', icon: <FaHistory />, path: 'paymentHistory' },
-    { name: 'Class Syllabus', icon: <FaFileAlt />, path: 'Class Syllabus' },
-    { name: 'Class Routine', icon: <FaCalendarAlt />, path: 'Class Routine' },
-    { name: 'Exam Date', icon: <FaTicketAlt />, path: 'Exam Date' },
-    { name: 'E-Library', icon: <FaBook />, path: 'E-Library' },
+    { name: 'Class Syllabus', icon: <FaFileAlt />, path: 'StudentSyllabus' },
+    { name: 'Class Routine', icon: <FaCalendarAlt />, path: 'ClassRoutine' },
+    // { name: 'Exam Date', icon: <FaTicketAlt />, path: 'Exam Date' },
+    // { name: 'E-Library', icon: <FaBook />, path: 'E-Library' },
   ];
 
   const menuItems = isAdmin ? adminMenuItems : userMenuItems;

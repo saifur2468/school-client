@@ -23,6 +23,11 @@ import PrivateRoute from "./Component/AuthSection/PrivateRoute";
 import PostNotice from "./Component/PostNotice";
 import SeeNotice from "./Component/SeeNotice";
 import AllStudent from "./Component/AllStudent";
+import StudentSyllabus from "./Component/AuthSection/StudentSyllabus";
+import ClassRoutine from "./Component/ClassRoutine";
+import MakeRouting from "./Component/MakeRouting";
+import AdminAdmissions from "./Component/Addmissonmanage";
+import StudentProfile from "./Component/StudentProfile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -89,6 +94,26 @@ children:[
     path:"allstudent",
     element:<AllStudent></AllStudent>
 
+  },
+  {
+     path:"StudentSyllabus",
+     element:<StudentSyllabus></StudentSyllabus>
+  },
+  {
+path:"ClassRoutine",
+element:<ClassRoutine></ClassRoutine>,
+  },
+  {
+    path:"MakeRouting",
+    element:<MakeRouting></MakeRouting>
+  },
+  {
+    path:"AdminAdmissions",
+    element:<AdminAdmissions></AdminAdmissions>
+  },
+  {
+    path:"StudentProfile",
+    element:<StudentProfile></StudentProfile>
   }
 ]
 },

@@ -1,0 +1,122 @@
+{
+  "CSE": {
+    "title": "Computer Science & Engineering",
+    "icon": "Code",
+    "color": "from-cyan-500/20 to-blue-500/20 border-cyan-500/30",
+    "textColor": "text-cyan-400",
+    "semesters": {
+      "1st Semester": [
+        { "code": "CSE-1101", "name": "Structured Programming Language (C)", "credits": 3.0 },
+        { "code": "CSE-1102", "name": "Structured Programming Lab", "credits": 1.5 },
+        { "code": "MAT-1101", "name": "Differential & Integral Calculus", "credits": 3.0 },
+        { "code": "ENG-1101", "name": "English Communication Skills", "credits": 2.0 }
+      ],
+      "2nd Semester": [
+        { "code": "CSE-1201", "name": "Object Oriented Programming (C++/Java)", "credits": 3.0 },
+        { "code": "CSE-1202", "name": "Object Oriented Programming Lab", "credits": 1.5 },
+        { "code": "EEE-1261", "name": "Basic Electrical Engineering", "credits": 3.0 },
+        { "code": "MAT-1201", "name": "Linear Algebra & Vector Analysis", "credits": 3.0 }
+      ],
+      "3rd Semester": [
+        { "code": "CSE-2101", "name": "Data Structures", "credits": 3.0 },
+        { "code": "CSE-2102", "name": "Data Structures Lab", "credits": 1.5 },
+        { "code": "CSE-2103", "name": "Digital Logic Design", "credits": 3.0 },
+        { "code": "MAT-2101", "name": "Discrete Mathematics", "credits": 3.0 }
+      ],
+      "4th Semester": [
+        { "code": "CSE-2201", "name": "Algorithms", "credits": 3.0 },
+        { "code": "CSE-2202", "name": "Algorithms Lab", "credits": 1.5 },
+        { "code": "CSE-2203", "name": "Database Management Systems", "credits": 3.0 },
+        { "code": "CSE-2204", "name": "DBMS Project Lab", "credits": 1.5 }
+      ],
+      "5th Semester": [
+        { "code": "CSE-3101", "name": "Operating Systems & System Programming", "credits": 3.0 },
+        { "code": "CSE-3103", "name": "Software Engineering & Design Patterns", "credits": 3.0 },
+        { "code": "CSE-3105", "name": "Web Engineering (MERN Stack)", "credits": 3.0 },
+        { "code": "CSE-3106", "name": "Web Engineering Lab", "credits": 1.5 }
+      ],
+      "6th Semester": [
+        { "code": "CSE-3201", "name": "Computer Networks", "credits": 3.0 },
+        { "code": "CSE-3202", "name": "Computer Networks Lab", "credits": 1.5 },
+        { "code": "CSE-3203", "name": "Microprocessor & Interfacing", "credits": 3.0 },
+        { "code": "CSE-3205", "name": "Artificial Intelligence", "credits": 3.0 }
+      ],
+      "7th Semester": [
+        { "code": "CSE-4101", "name": "Compiler Design", "credits": 3.0 },
+        { "code": "CSE-4103", "name": "Computer Graphics & Multimedia", "credits": 3.0 },
+        { "code": "CSE-4100", "name": "Project / Thesis Phase-I", "credits": 2.0 },
+        { "code": "CSE-4105", "name": "Cyber Security & Cryptography", "credits": 3.0 }
+      ],
+      "8th Semester": [
+        { "code": "CSE-4200", "name": "Project / Thesis Phase-II", "credits": 4.0 },
+        { "code": "CSE-4201", "name": "Machine Learning & Deep Learning", "credits": 3.0 },
+        { "code": "CSE-4203", "name": "Cloud Computing & DevOps", "credits": 3.0 },
+        { "code": "CSE-4205", "name": "Professional Ethics & Entrepreneurship", "credits": 2.0 }
+      ]
+    }
+  },
+  "EEE": {
+    "title": "Electrical & Electronic Engineering",
+    "icon": "Zap",
+    "color": "from-amber-500/20 to-orange-500/20 border-amber-500/30",
+    "textColor": "text-amber-400",
+    "semesters": {
+      "1st Semester": [
+        { "code": "EEE-1101", "name": "Electrical Circuit Analysis I", "credits": 3.0 },
+        { "code": "EEE-1102", "name": "Electrical Circuit Lab I", "credits": 1.5 },
+        { "code": "MAT-1101", "name": "Differential & Integral Calculus", "credits": 3.0 },
+        { "code": "PHY-1101", "name": "Physics (Waves & Optics)", "credits": 3.0 }
+      ],
+      "8th Semester": [
+        { "code": "EEE-4200", "name": "Project / Thesis Phase-II", "credits": 4.0 },
+        { "code": "EEE-4201", "name": "Renewable Energy Systems", "credits": 3.0 },
+        { "code": "Industrial-4200", "name": "Industrial Training & Viva", "credits": 2.0 }
+      ]
+    }
+  },
+  "CIVIL": {
+    "title": "Civil Engineering",
+    "icon": "Building",
+    "color": "from-emerald-500/20 to-teal-500/20 border-emerald-500/30",
+    "textColor": "text-emerald-400",
+    "semesters": {
+      "1st Semester": [
+        { "code": "CE-1101", "name": "Engineering Mechanics", "credits": 3.0 },
+        { "code": "CE-1102", "name": "Civil Engineering Drawing", "credits": 1.5 }
+      ]
+    }
+  },
+  "TEXT": {
+    "title": "Textile Engineering",
+    "icon": "Shirt",
+    "color": "from-pink-500/20 to-rose-500/20 border-pink-500/30",
+    "textColor": "text-pink-400",
+    "semesters": {
+      "1st Semester": [
+        { "code": "TX-1101", "name": "Introduction to Textile Engineering", "credits": 2.0 }
+      ]
+    }
+  },
+  "MECH": {
+    "title": "Mechanical Engineering",
+    "icon": "Settings",
+    "color": "from-red-500/20 to-orange-500/20 border-red-500/30",
+    "textColor": "text-red-400",
+    "semesters": {
+      "1st Semester": [
+        { "code": "ME-1101", "name": "Engineering Drawing & CAD", "credits": 3.0 }
+      ]
+    }
+  },
+  "IT": {
+    "title": "Information Technology",
+    "icon": "Cpu",
+    "color": "from-purple-500/20 to-indigo-500/20 border-purple-500/30",
+    "textColor": "text-purple-400",
+    "semesters": {
+      "1st Semester": [
+        { "code": "IT-1101", "name": "Introduction to ICT & Computing", "credits": 3.0 }
+      ]
+    }
+  }
+}

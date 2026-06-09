@@ -8,7 +8,7 @@ const AllStudents = () => {
     const fetchStudents = async (search = '') => {
         setLoading(true);
         try {
-            // আপনার পোর্ট যদি ৫০০৫ বা অন্য কিছু হয় তবে তা নিশ্চিত করুন
+            
             const res = await fetch(`http://localhost:5000/all-students?search=${search}`);
             const data = await res.json();
             setStudents(data);

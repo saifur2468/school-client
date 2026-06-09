@@ -1,97 +1,211 @@
-import React, { useState } from 'react';
-import { FaUser, FaUserFriends, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+import {
+  FaUser,
+  FaUserFriends,
+  FaCalendar,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const AdmissionPage = () => {
   const [step, setStep] = useState(1);
 
+  const [form, setForm] = useState({
+    name: "",
+    dob: "",
+    gender: "Male",
+    department: "CSE",
+    fatherName: "",
+    phone: "",
+    address: "",
+  });
+
+  // input handler
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // submit to backend
+  const handleSubmit = async () => {
+    await fetch("http://localhost:5000/admissions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    alert("Application Submitted Successfully!");
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 font-sans pb-20">
+    <div className="min-h-screen bg-slate-50">
+
       {/* Header */}
-      <div className="bg-[#bc3c44] text-white py-16 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">
-            Session 2026-27
-          </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold mt-4">Admission Form</h1>
-          <p className="mt-4 text-white/80 text-lg">Fill out the form below to join our community of excellence.</p>
-        </div>
+      <div className="text-center py-10 bg-white shadow">
+        <h1 className="text-3xl font-bold">Admission Form</h1>
+        <p className="text-gray-500">Session 2026-27</p>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 -mt-10">
-        {/* Step Indicator */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+
+        {/* Step Buttons */}
+        <div className="grid grid-cols-2 gap-4 mb-8">
           <StepCard stepNumber={1} currentStep={step} label="Student Info" />
           <StepCard stepNumber={2} currentStep={step} label="Guardian Info" />
         </div>
 
-        {/* Form */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 p-8 md:p-12">
+        {/* Form Card */}
+        <div className="bg-white rounded-3xl shadow-2xl p-8">
+
+          {/* STEP 1 */}
           {step === 1 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">Student Information</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <InputGroup label="Full Name" placeholder="Md. Saifur Rahman" icon={<FaUser />} />
-                <InputGroup label="Date of Birth" type="date" icon={<FaCalendar />} />
+              <h2 className="text-2xl font-bold">Student Information</h2>
+
+              <div className="grid md:grid-cols-2 gap-4">
+
+                <InputGroup
+                  label="Full Name"
+                  name="name"
+                  placeholder="Md. Saifur Rahman"
+                  icon={<FaUser />}
+                  onChange={handleChange}
+                />
+
+                <InputGroup
+                  label="Date of Birth"
+                  name="dob"
+                  type="date"
+                  icon={<FaCalendar />}
+                  onChange={handleChange}
+                />
+
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-bold text-slate-700">Gender</label>
-                  <select className="p-3 border rounded-xl outline-none focus:border-[#bc3c44]">
+                  <label>Gender</label>
+                  <select
+                    name="gender"
+                    onChange={handleChange}
+                    className="p-3 border rounded-xl"
+                  >
                     <option>Male</option>
                     <option>Female</option>
                     <option>Other</option>
                   </select>
                 </div>
+
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-bold text-slate-700">Department</label>
-                  <select className="p-3 border rounded-xl outline-none focus:border-[#bc3c44]">
-                    {["CSE", "EEE", "CIVIL", "TEXT", "MECH", "ECE", "CHEM", "BME", "IT", "AERO"].map(d => (
+                  <label>Department</label>
+                  <select
+                    name="department"
+                    onChange={handleChange}
+                    className="p-3 border rounded-xl"
+                  >
+                    {["CSE", "EEE", "CIVIL", "TEXT", "MECH", "IT"].map((d) => (
                       <option key={d}>{d}</option>
                     ))}
                   </select>
                 </div>
+
               </div>
 
-              <button 
+              <button
                 onClick={() => setStep(2)}
-                className="w-full md:w-auto bg-[#bc3c44] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#a3333a] transition-all"
+                className="bg-red-500 text-white px-6 py-3 rounded-xl"
               >
-                Continue to Guardian Info
+                Next
               </button>
             </div>
           )}
 
+          {/* STEP 2 */}
           {step === 2 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900">Guardian Information</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <InputGroup label="Father/Mother Name" icon={<FaUserFriends />} />
-                <InputGroup label="Phone Number" placeholder="+880 1XXX-XXXXXX" icon={<FaUser />} />
-                <InputGroup label="Present Address" icon={<FaMapMarkerAlt />} isFull />
+              <h2 className="text-2xl font-bold">Guardian Information</h2>
+
+              <div className="grid md:grid-cols-2 gap-4">
+
+                <InputGroup
+                  label="Father/Mother Name"
+                  name="fatherName"
+                  icon={<FaUserFriends />}
+                  onChange={handleChange}
+                />
+
+                <InputGroup
+                  label="Phone Number"
+                  name="phone"
+                  icon={<FaUser />}
+                  onChange={handleChange}
+                />
+
+                <InputGroup
+                  label="Present Address"
+                  name="address"
+                  icon={<FaMapMarkerAlt />}
+                  isFull
+                  onChange={handleChange}
+                />
+
               </div>
 
-              <div className="flex gap-4 mt-6">
-                <button onClick={() => setStep(1)} className="px-8 py-4 rounded-xl font-bold text-slate-500 border border-slate-200">Back</button>
-                <button onClick={() => alert('Application Submitted!')} className="bg-[#bc3c44] text-white px-10 py-4 rounded-xl font-bold flex-1">
-                  Submit
+              <div className="flex gap-4">
+                <button
+                  onClick={() => setStep(1)}
+                  className="px-6 py-3 border rounded-xl"
+                >
+                  Back
+                </button>
+
+                <button
+                  onClick={handleSubmit}
+                  className="bg-green-600 text-white px-6 py-3 rounded-xl flex-1"
+                >
+                  Submit Application
                 </button>
               </div>
             </div>
           )}
+
         </div>
       </div>
     </div>
   );
 };
 
-// Reusable Components
-const InputGroup = ({ label, type = "text", placeholder, icon, isFull }) => (
-  <div className={`flex flex-col gap-2 ${isFull ? 'md:col-span-2' : ''}`}>
-    <label className="text-sm font-bold text-slate-700 flex items-center gap-2">{icon} {label}</label>
-    <input type={type} placeholder={placeholder} className="p-3 border rounded-xl outline-none focus:border-[#bc3c44] focus:ring-4 focus:ring-red-50 transition-all" />
+/* ===================== INPUT COMPONENT ===================== */
+const InputGroup = ({
+  label,
+  name,
+  type = "text",
+  placeholder,
+  icon,
+  onChange,
+  isFull,
+}) => (
+  <div className={`flex flex-col gap-2 ${isFull ? "md:col-span-2" : ""}`}>
+    <label className="text-sm font-semibold flex items-center gap-2">
+      {icon} {label}
+    </label>
+
+    <input
+      name={name}
+      type={type}
+      placeholder={placeholder}
+      onChange={onChange}
+      className="p-3 border rounded-xl outline-none focus:border-red-500"
+    />
   </div>
 );
 
+/* ===================== STEP CARD ===================== */
 const StepCard = ({ stepNumber, currentStep, label }) => (
-  <div className={`p-4 rounded-2xl border-2 text-center font-bold ${currentStep >= stepNumber ? 'border-[#bc3c44] bg-red-50/50 text-[#bc3c44]' : 'border-slate-200 text-slate-400'}`}>
+  <div
+    className={`p-3 rounded-xl text-center border ${
+      stepNumber === currentStep
+        ? "bg-red-500 text-white"
+        : "bg-white"
+    }`}
+  >
     Step {stepNumber}: {label}
   </div>
 );
